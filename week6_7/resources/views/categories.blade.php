@@ -36,7 +36,8 @@
             <nav class="my-2 my-md-0 mr-md-3">
                 <a class="p-2 text-dark" href="{{ url('/companies') }}">Companies</a>
                 <a class="p-2 text-dark" href="{{ url('/trainers') }}">Trainer</a>
-                <a class="p-2 text-dark" href="{{ url('/categories ') }}">Categories</a>
+                <a class="p-2 text-dark" href="{{ url('/categories') }}">Categories</a>
+
                 <form action="/search" method="get">
                     <input type="search" name="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                            aria-describedby="search-addon" />
@@ -47,30 +48,26 @@
         </div>
 
         <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-            <h1 class="display-4">Trainers</h1>
+            <h1 class="display-4">Categories</h1>
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Phone</th>
                     </tr>
                 </thead>
-                @foreach ($trainers as $trainer)
+                @foreach ($categories as $category)
                 <tbody>
                     <tr>
-                        <th scope="row">{!! $trainer->trainers_id !!}</th>
-                        <td>{!! $trainer->trainers_name !!}</td>
-                        <td>{!! $trainer->trainers_email !!}</td>
-                        <td>{!! $trainer->trainers_phone !!}</td>
+                        <th scope="row">{!! $category->categories_id !!}</th>
+                        <td>{!! $category->categories_name !!}</td>
                     </tr>
                 </tbody>
                 @endforeach
             </table>
         </div>
         
-        <?php echo $trainers->links(); ?>
+        <?php echo $categories->links(); ?>
     </body>
 
 </html>

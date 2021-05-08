@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CompanySeeder extends Seeder
+class CategoriesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,10 +14,10 @@ class CompanySeeder extends Seeder
      */
     public function run()
     {
-        //
-	$query = "insert into companies values (null,?,?,?,?,?,?)";
+	$query = "insert into categories values (null,?)";
 	for($i=0;$i<40000;$i++){
-            DB::insert($query,['123','abcd','abcc','kb','quang',1]);
+		DB::insert($query,['quang']);
 	}
+        //
     }
 }

@@ -36,6 +36,7 @@
             <nav class="my-2 my-md-0 mr-md-3">
                 <a class="p-2 text-dark" href="{{ url('/companies') }}">Companies</a>
                 <a class="p-2 text-dark" href="{{ url('/trainers') }}">Trainer</a>
+                <a class="p-2 text-dark" href="{{ url('/categories') }}">Categories</a>
                 <form action="/search" method="get">
                     <input type="search" name="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                            aria-describedby="search-addon" />
@@ -67,6 +68,7 @@
                 </tbody>
                 @endforeach
             </table>
+            {{-- {!! Form::select('categories[]', $categories, null, ['class' => 'form-control'])!!} --}}
         </div>
     </body>
 
