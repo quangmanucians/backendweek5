@@ -64,6 +64,12 @@
                         <td>{!! $company->company_address !!}</td>
                         <td>{!! $company->company_code !!}</td>
                         <td>{!! $company->company_phone !!}</td>
+                         <td>{!! $company->companiesTrainers['trainer_name'] !!}</td>
+                    <td>
+                        @foreach($company->companiesCategories as $category)
+                        {!! $category['category_name'] !!}
+                        @endforeach
+                    </td>
                     </tr>
                 </tbody>
             @endforeach

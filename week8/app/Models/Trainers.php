@@ -9,7 +9,7 @@ class Trainers extends Model {
     use HasFactory;
     protected $table = 'trainers';
     
-    public function search($value) {
-        return self::where('trainers_name', 'like', '%'.$value.'%')->orwhere('trainers_email', 'like', '%'.$value.'%')->paginate(20) ;
+    public function trainersCompanies(){
+        return $this->hasOne(Companies::class,'company_id','company_id');
     }
 }

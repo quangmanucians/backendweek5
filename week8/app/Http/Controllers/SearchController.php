@@ -15,7 +15,6 @@ class SearchController extends Controller {
         
         $obj = new Trainers();
         $trainers = $obj->search($request->get('search'));
-               //return view('search', ['trainers' => $trainers]);
         return view('search', ['search' => $trainers]);
         
     }

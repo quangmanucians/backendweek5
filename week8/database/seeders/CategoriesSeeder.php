@@ -15,9 +15,8 @@ class CategoriesSeeder extends Seeder
     public function run()
     {
 	$query = "insert into categories values (null,?)";
-	for($i=0;$i<40000;$i++){
+	for($i=0;$i<10;$i++){
 		DB::insert($query,['quang']);
 	}
-        //
     }
 }

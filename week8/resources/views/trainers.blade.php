@@ -64,6 +64,7 @@
                         <td>{!! $trainer->trainers_name !!}</td>
                         <td>{!! $trainer->trainers_email !!}</td>
                         <td>{!! $trainer->trainers_phone !!}</td>
+                        <td>{!! $trainer->trainersCompanies['company_name']!!}</td>
                     </tr>
                 </tbody>
                 @endforeach
