@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class CategoriesSeeder extends Seeder
+class TeachersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,9 +14,10 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-	$query = "insert into categories values (null,?)";
-	for($i=0;$i<10;$i++){
-		DB::insert($query,['quang']);
-	}
+        for ($i = 0; $i < 10; $i++) {
+            DB::table('teachers')->insert([
+                'user_id' => random_int(1, 10),
+            ]);
+        }
     }
 }
