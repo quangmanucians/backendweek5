@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class CompanySeeder extends Seeder
 {
@@ -15,15 +16,14 @@ class CompanySeeder extends Seeder
     public function run()
     {
         //
-        $query = "insert into companies values (null,?,?,?,?,?,?)";
-        for ($i = 0; $i < 100; $i++) {
-            DB::insert($query, ['tien', 'tien', 'tien', 'tien', 'tien','1']);
-        }
-        for ($i = 0; $i < 200; $i++) {
-            DB::insert($query, ['tien', 'tien', 'tien', 'tien', 'tien','2']);
-        }
-        for ($i = 0; $i < 100; $i++) {
-            DB::insert($query, ['tien', 'tien', 'tien', 'tien', 'tien','3']);
-        }
+        for ($i=0; $i <= 10; $i++){ //Vòng lặp 1.000.000 lần để thêm vào
+            DB::table('companies')->insert([
+                'company_name' => Str::random(10), //Random ki tu
+                'company_web' => Str::random(10),
+                'company_address' => Str::random(10),
+                'company_code' => Str::random(10),
+                'company_phone' => Str::random(10),    
+            ]);
+           }
     }
 }

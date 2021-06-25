@@ -26,6 +26,7 @@
                     @else
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('signout') }}">Logout</a>
+                        {{ Auth::user()->user_name }}
                     </li>
                     @endguest
                 </ul>
